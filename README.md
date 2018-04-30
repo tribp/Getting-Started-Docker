@@ -1,4 +1,5 @@
 # Docker-Getting-Started
+Architecture: docker vs VM  
 <img src="images/dockerVsVM.png" width="500px" >
 
 Basic commands
