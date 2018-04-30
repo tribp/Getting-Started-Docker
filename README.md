@@ -36,7 +36,7 @@ Docker info
 docker images ls
 
 ```
-4. List docker running containers 
+4. List docker running containers  
 remark: container = runtime instance of image
 ```
 docker ps
