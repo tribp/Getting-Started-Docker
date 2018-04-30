@@ -1,5 +1,6 @@
 # Docker-Getting-Started
-<img src="images/dockerVsVM.png" width="300px" >
+<img src="images/dockerVsVM.png" width="500px" >
+
 Basic commands
 1. docker version
 ```
