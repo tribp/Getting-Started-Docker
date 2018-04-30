@@ -1,6 +1,6 @@
 # Docker-Getting-Started
 Architecture: docker vs VM  
-<img src="images/dockerVsVM.png" width="500px" >
+<img src="images/dockerVsVM.png" width="600px" >
 
 Basic commands
 1. docker version
@@ -42,7 +42,10 @@ docker images ls
 4. List docker running containers  
 remark: container = runtime instance of image
 ```
-docker ps  
+docker ps
+docker container ls
+docker container ls --all
+docker container ls -aq (all quiet mode)
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
 cf82029d460a        cs50/ide            "node server.js -w /…"   2 weeks ago         Up 5 days           0.0.0.0:5050->5050/tcp, 0.0.0.0:8080-8082->8080-8082/tcp   ide50
 ```
