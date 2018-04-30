@@ -31,7 +31,13 @@ Server:
 ```
 Docker info
 ```
-3. Docker Processes
+3. List Docker images
+```
+docker images ls
+
+```
+4. List Docker running containers 
+remark: container = runtime instance of image
 ```
 Docker ps
 '''
