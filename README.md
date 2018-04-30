@@ -29,7 +29,7 @@ Server:
 ```
 2. docker info
 ```
-Docker info
+docker info
 ```
 3. List docker images
 ```
