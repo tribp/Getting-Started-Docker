@@ -1,12 +1,12 @@
 # Docker-Getting-Started
 Basic commands
-1. Docker version
+1. docker version
 ```
-Docker --version
+docker --version
 Docker version 18.03.0-ce, build 0520e24
 ```
 ```
-Docker version
+docker version
 Client:
  Version:	18.03.0-ce
  API version:	1.37
@@ -27,19 +27,19 @@ Server:
   OS/Arch:	linux/amd64
   Experimental:	true
 ```
-2. Docker info
+2. docker info
 ```
 Docker info
 ```
-3. List Docker images
+3. List docker images
 ```
 docker images ls
 
 ```
-4. List Docker running containers 
+4. List docker running containers 
 remark: container = runtime instance of image
 ```
-Docker ps
+docker ps
 '''
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
 cf82029d460a        cs50/ide            "node server.js -w /…"   2 weeks ago         Up 5 days           0.0.0.0:5050->5050/tcp, 0.0.0.0:8080-8082->8080-8082/tcp   ide50
