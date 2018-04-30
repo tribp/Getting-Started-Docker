@@ -27,3 +27,15 @@ Server:
   OS/Arch:	linux/amd64
   Experimental:	true
 ```
+2. Docker info
+```
+Docker info
+```
+3. Docker Processes
+```
+Docker ps
+'''
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
+cf82029d460a        cs50/ide            "node server.js -w /…"   2 weeks ago         Up 5 days           0.0.0.0:5050->5050/tcp, 0.0.0.0:8080-8082->8080-8082/tcp   ide50
+```
+
