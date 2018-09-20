@@ -59,7 +59,21 @@ docker container run -d -p 8080:80 --name myWebServer nginx
     -> nginx = name of image to use
 
 ```
-6. starting CLI inside of container
+6. Analyze containers
+```
+docker container top myWebServer        -> shows processes inside my container
+docker container inspect myWebServer    -> shows docker config file (json) for this container
+docker container stats                  -> shows overall performance of all my containers
+docker container stats myWenServer      -> shows performance details of my container
+
+```
+7. starting CLI inside of container
+
+2 options:
+    a. docker container run -it ... -> start a container interactively
+        if we leave CLI then containers stops !!!
+    b. docker container exec -it .. -> starts a cli on running container
+        if we leace CLI then CLI stops but container continues !!!
 ```
 docket container exec -it myWebServer sh
     -> exec = execute command
@@ -68,12 +82,9 @@ docket container exec -it myWebServer sh
     -> sh = shell command in nginx because there is no 'bash'
     
 ```
-7. Analyze containers
-````
-docker container top myWebServer        -> shows process inside my container
-docker container inspect myWebServer    -> shows docker config file (json) for this container
-docker container stats                  -> shows overall performance of all my containers
-docker container stats myWenServer      -> shows performance details of my container
+8. (Default) launch command
 
-```
+<img src="images/docker_Container_default_Cmd.png" width="600px" >
+
+
 
