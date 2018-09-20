@@ -71,9 +71,9 @@ docker container stats myWenServer      -> shows performance details of my conta
 
 2 options:
 
-    a. docker container run -it ... -> start a container interactively
-        if we leave CLI then containers stops !!!
-    b. docker container exec -it .. -> starts a cli on running container
+    a. docker container run -it ... -> start a container interactively in the same process.
+        if we leave CLI then container stops !!!
+    b. docker container exec -it .. -> starts a cli on running container in ADDITIONAL process.
         if we leace CLI then CLI stops but container continues !!!
 ```
 docket container exec -it myWebServer sh
@@ -87,5 +87,28 @@ docket container exec -it myWebServer sh
 
 <img src="images/docker_Container_default_Cmd.png" width="800px" >
 
+9. Different Linux Distros.
 
+Most minimal = 'alpine' -> we have to install everything we need  additionally wit APK packege manager
 
+docker container run it --name mySmallLinux alpine sh
+docker container run it --name myUbuntu ubuntu bash
+
+<img src="images/Linux_alpine_vs_ubuntu.png" width="800px" >
+
+Next we have to add the things we need in alpine: eg 'curl'
+```
+docker pull alpine                                          -> pulls latest image of alpine
+docker container run -it --name mySmallLinux alpine sh      -> start container + shell
+(now in alpine prompt)
+apk add curl                                                -> add curl to the (tiny) linux distro                                        
+```
+10. stooping and deleting
+
+First we have to 'stop' a container before we can delete them
+```
+docker container stop 9b5                   -> if eg ID=9b5xxxxxxxxxxxx etc (only first digits if unique)
+or
+docker container stop mySmallLinux
+docker container rm mySmallLinux
+```
