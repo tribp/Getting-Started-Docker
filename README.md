@@ -103,11 +103,13 @@ docker container run -it --name mySmallLinux alpine sh      -> start container +
 (now in alpine prompt)
 apk add curl                                                -> add curl to the (tiny) linux distro                                        
 ```
-10. stooping and deleting
+10. stopping and deleting
 
 First we have to 'stop' a container before we can delete them
+<img src="images/Docker_Container_Stop.png" width="800px" >
+
 ```
-docker container stop 9b5                   -> if eg ID=9b5xxxxxxxxxxxx etc (only first digits if unique)
+docker container stop ec8                   -> if eg ID=ec8532baxx etc (only first digits if unique)
 or
 docker container stop mySmallLinux
 docker container rm mySmallLinux
