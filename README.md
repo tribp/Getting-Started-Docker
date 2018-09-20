@@ -127,6 +127,8 @@ docker network disconnect
 Ping between containers
 
 We perform a usual 'docker container exec -it' (to start new process where next cmd will be run) + container Name + command.
+Remark: DNS is default enabled with all custom networks but NOT at default 'bridge' network.
+Best practise = create allways your own netwrok(s)
 ```
 docker container exec -it mySmallLinux ping myWebServer
 ```
