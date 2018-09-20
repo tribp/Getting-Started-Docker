@@ -52,5 +52,27 @@ cf82029d460a        cs50/ide            "node server.js -w /…"   2 we
 5. Execute docker image (or test)
 ```
 docker run hello-world
+docker container run -d -p 8080:80 --name myWebServer nginx     
+    -> -d = in'detatch' mode (as process)
+    -> map external port 8080 to internal port 80 inside container
+    -> --name = give name
+    -> nginx = name of image to use
+
+```
+6. starting CLI inside of container
+````
+docket container exec -it myWebServer sh
+    -> exec = execute command
+    -> -i = interactive (stay open)
+    -> -t = tty
+    -> sh = shell command in nginx because there is no 'bash'
+```
+7. Analyze containers
+````
+docker container top myWebServer        -> shows process inside my container
+docker container inspect myWebServer    -> shows docker config file (json) for this container
+docker container stats                  -> shows overall performance of all my containers
+docker container stats myWenServer      -> shows performance details of my container
+
 ```
 
