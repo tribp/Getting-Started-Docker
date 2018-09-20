@@ -70,6 +70,7 @@ docker container stats myWenServer      -> shows performance details of my conta
 7. starting CLI inside of container
 
 2 options:
+
     a. docker container run -it ... -> start a container interactively
         if we leave CLI then containers stops !!!
     b. docker container exec -it .. -> starts a cli on running container
@@ -84,7 +85,7 @@ docket container exec -it myWebServer sh
 ```
 8. (Default) launch command
 
-<img src="images/docker_Container_default_Cmd.png" width="600px" >
+<img src="images/docker_Container_default_Cmd.png" width="800px" >
 
 
 
