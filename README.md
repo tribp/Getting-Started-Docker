@@ -123,3 +123,11 @@ docker network --create driver
 docker network connect
 docker network disconnect
 ```
+
+Ping between containers
+
+We perform a usual 'docker container exec -it' (to start new process where next cmd will be run) + container Name + command.
+```
+docker container exec -it mySmallLinux ping myWebServer
+```
+<img src="images/Docker_ping_internalContainers.png" width="800px" >
