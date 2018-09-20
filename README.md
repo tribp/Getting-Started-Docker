@@ -43,8 +43,8 @@ docker images ls
 remark: container = runtime instance of image
 ```
 docker ps
-docker container ls
-docker container ls --all
+docker container ls                         -> shows running container
+docker container ls --all                   -> shows running + stopped containers
 docker container ls -aq (all quiet mode)
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
 cf82029d460a        cs50/ide            "node server.js -w /…"   2 weeks ago         Up 5 days           0.0.0.0:5050->5050/tcp, 0.0.0.0:8080-8082->8080-8082/tcp   ide50
@@ -113,4 +113,13 @@ docker container stop ec8                   -> if eg ID=ec8532baxx etc (only fir
 or
 docker container stop mySmallLinux
 docker container rm mySmallLinux
+```
+11. Docker Networks
+
+```
+docker network ls
+docker network inspect
+docker network --create driver
+docker network connect
+docker network disconnect
 ```
