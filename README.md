@@ -60,12 +60,13 @@ docker container run -d -p 8080:80 --name myWebServer nginx
 
 ```
 6. starting CLI inside of container
-````
+```
 docket container exec -it myWebServer sh
     -> exec = execute command
     -> -i = interactive (stay open)
     -> -t = tty
     -> sh = shell command in nginx because there is no 'bash'
+    
 ```
 7. Analyze containers
 ````
