@@ -114,22 +114,53 @@ or
 docker container stop mySmallLinux
 docker container rm mySmallLinux
 ```
+
+Remark:
+We can launch execute and delete (--rm) a container. This way nothing remains to be cleand-up.!!!
+eg: Here we launch a linux 'centos' container, connect in into network my_DockerNet, and execute a curl command. This example queries a elasticsearch instance on port 9200.
+
+```
+docker container run --rm --network my_DockerNet centos curl -s esServerFarm:9200
+```
 11. Docker Networks
 
 ```
 docker network ls
-docker network inspect
+docker network inspect                                  -> returns json with network info and connected containers
 docker network --create driver
-docker network connect
+docker network connect [options] NETWORK CONTAINER      -> connect CONTAINER to this NETWORK
 docker network disconnect
 ```
+
 
 Ping between containers
 
 We perform a usual 'docker container exec -it' (to start new process where next cmd will be run) + container Name + command.
 Remark: DNS is default enabled with all custom networks but NOT at default 'bridge' network.
-Best practise = create allways your own netwrok(s)
+Best practise = create allways your own network(s)
 ```
 docker container exec -it mySmallLinux ping myWebServer
 ```
 <img src="images/Docker_ping_internalContainers.png" width="800px" >
+
+11.2 Docker DNS - network alias - round robin
+
+We create 2 different servers (containres) but with the same '--network-alias'. This way DNS will resolve, round robin wise' each server ip address and creates some kind oh high availability.
+
+'''
+docker container run -d --name esServer1 elasticsearch:5.6 --network my_DockerNet --network-alias esCloudServer
+'''
+11.3 Excercise: m
+- Make two elasticsearch containers (version 2) in network 'my_DockerNet' and both with network-alias = 'esServerFarm'
+- launch a linux 'alpine' container and execute 'nslookup esServerFarm' to check resolving both ip's and -rrm (to clean-up)
+- launch a 'centos' linux (also with --rm) and execute 'curl -s esServerFarm:9200' to check elasticsearch functionality.
+
+```
+docker container run -itd --name esServer1 --network my_DockerNet --network-alias esServerFarm elasticsearch:2
+docker container run -itd --name esServer1 --network my_DockerNet --network-alias esServerFarm elasticsearch:2
+docker container run --rm -it --network my_DockerNet alpine nslookup esServerFarm
+docker container run --rm -it --network my_DockerNet centos curl -s esServerFarm:9200
+```
+<img src="images/Docker_Alpine_cmd_nslookup.png" width="800px" >
+
+<img src="images/Docker_centos_cmd_elastic.png" width="800px" >
