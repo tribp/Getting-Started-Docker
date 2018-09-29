@@ -201,8 +201,8 @@ docker image inspact nginx              -> shows json metadata
     - docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
         eg: docker image tag nginx tribp/nginx:testing
 ### 3.3 Login-out to docker hub
-    - remark:
-        - cat .docker.config.json       -> login key is added !! -> be sure to log out on untrusted host
+### remark:
+    - cat .docker.config.json       -> login key is added !! -> be sure to log out on untrusted host
     - docker login
     - docker logout
 ### 3.4 push / pull
