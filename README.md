@@ -150,7 +150,8 @@ We create 2 different servers (containres) but with the same '--network-alias'. 
 '''
 docker container run -d --name esServer1 elasticsearch:5.6 --network my_DockerNet --network-alias esCloudServer
 '''
-11.3 Excercise: m
+
+11.3 Excercise:
 - Make two elasticsearch containers (version 2) in network 'my_DockerNet' and both with network-alias = 'esServerFarm'
 - launch a linux 'alpine' container and execute 'nslookup esServerFarm' to check resolving both ip's and -rrm (to clean-up)
 - launch a 'centos' linux (also with --rm) and execute 'curl -s esServerFarm:9200' to check elasticsearch functionality.
@@ -164,3 +165,45 @@ docker container run --rm -it --network my_DockerNet centos curl -s esServerFarm
 <img src="images/Docker_Alpine_cmd_nslookup.png" width="800px" >
 
 <img src="images/Docker_centos_cmd_elastic.png" width="800px" >
+
+2. Images
+2.1 Image basics
+
+What is an image ?
+    - app binaries and dependencies
+    - metadate about the image and how to run it
+    
+2.2 Image layers
+ 
+ ```
+docker history nginx                    -> shows the layered changes in time of the image
+docker image inspact nginx              -> shows json metadata
+```
+    - every layers has his unique SHA
+    - every layer exits only ONCE, even if multiple image use that same layer
+        eg: an image of a ubuntu + apt + apache AND an other image ubuntu + apt + mysql. While downloading the second image will only download mysql since ubuntu + apt is already present in an other image. The SHA ensures that we refer to exactly the correct and unique immage. 
+2.3 Conclusion
+    - images are made up of file system changes and metadata
+    - each layer is uniquely identified and only stored ONCE on a host
+    - this saves stores space on host and transfer time push/pull
+    - a container is just a single read/write layer on top of image.
+    
+3 Docker hub
+3.1 intro
+    - 'official' images like 'nginx'
+    - 'unofficial' = username / image_name  -> eg tribp/nginx
+3.2 tags
+    - add it manually or default = 'latest'
+    - docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+        eg: docker image tag nginx tribp/nginx:testing
+3.3 Login-out to docker hub
+    - remark:
+        - cat .docker.config.json       -> login key is added !! -> be sure to log out on untrusted host
+    - docker login
+    - docker logout
+3.4 push / pull
+
+Docker hub works similar to GitHub.
+    - docker image push tribp/nginx
+remark: if we want private images, we first have to create a private respository on the docker hub account and push your image.
+    
