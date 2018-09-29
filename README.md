@@ -172,11 +172,11 @@ docker container run --rm -it --network my_DockerNet centos curl -s esServerFarm
 ## 2 Images
 
 ### 2.1 Image basics
-'''
+```
 What is an image ?
     - app binaries and dependencies
     - metadate about the image and how to run it
-'''
+```
 ### 2.2 Image layers
  
  ```
@@ -208,10 +208,10 @@ docker image inspact nginx              -> shows json metadata
 ### 3.4 push / pull
 
 Docker hub works similar to GitHub.
-'''
-    - docker image push tribp/nginx
-'''
 
+```
+    - docker image push tribp/nginx
+```
 ### remark: 
 if we want private images, we first have to create a private respository on the docker hub account and push your image.
     
