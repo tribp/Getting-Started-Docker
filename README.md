@@ -115,9 +115,10 @@ docker container stop mySmallLinux
 docker container rm mySmallLinux
 ```
 
-####Remark:
+#### Remark:
 
 We can launch execute and delete (--rm) a container. This way nothing remains to be cleand-up.!!!
+
 eg: Here we launch a linux 'centos' container, connect in into network my_DockerNet, and execute a curl command. This example queries a elasticsearch instance on port 9200.
 
 ```
@@ -137,7 +138,8 @@ docker network disconnect
 Ping between containers
 
 We perform a usual 'docker container exec -it' (to start new process where next cmd will be run) + container Name + command.
-Remark: DNS is default enabled with all custom networks but NOT at default 'bridge' network.
+### Remark: 
+DNS is default enabled with all custom networks but NOT at default 'bridge' network.
 Best practise = create allways your own network(s)
 ```
 docker container exec -it mySmallLinux ping myWebServer
@@ -170,11 +172,11 @@ docker container run --rm -it --network my_DockerNet centos curl -s esServerFarm
 ## 2 Images
 
 ### 2.1 Image basics
-
+'''
 What is an image ?
     - app binaries and dependencies
     - metadate about the image and how to run it
-    
+'''
 ### 2.2 Image layers
  
  ```
@@ -210,6 +212,6 @@ Docker hub works similar to GitHub.
     - docker image push tribp/nginx
 '''
 
-remark: 
+### remark: 
 if we want private images, we first have to create a private respository on the docker hub account and push your image.
     
