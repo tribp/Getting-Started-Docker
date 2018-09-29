@@ -2,8 +2,8 @@
 Architecture: docker vs VM  
 <img src="images/dockerVsVM.png" width="600px" >
 
-##1. Basic commands
-###1.1 docker version
+## 1. Basic commands
+### 1.1 docker version
 ```
 docker --version
 Docker version 18.03.0-ce, build 0520e24
@@ -30,16 +30,16 @@ Server:
   OS/Arch:	linux/amd64
   Experimental:	true
 ```
-###1.2 docker info
+### 1.2 docker info
 ```
 docker info
 ```
-###1.3 List docker images
+### 1.3 List docker images
 ```
 docker images ls
 
 ```
-###1.4 List docker running containers  
+### 1.4 List docker running containers  
 remark: container = runtime instance of image
 ```
 docker ps
@@ -49,7 +49,7 @@ docker container ls -aq (all quiet mode)
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
 cf82029d460a        cs50/ide            "node server.js -w /…"   2 weeks ago         Up 5 days           0.0.0.0:5050->5050/tcp, 0.0.0.0:8080-8082->8080-8082/tcp   ide50
 ```
-###1.5 Execute docker image (or test)
+### 1.5 Execute docker image (or test)
 ```
 docker run hello-world
 docker container run -d -p 8080:80 --name myWebServer nginx     
@@ -59,7 +59,7 @@ docker container run -d -p 8080:80 --name myWebServer nginx
     -> nginx = name of image to use
 
 ```
-###6. Analyze containers
+### 6. Analyze containers
 ```
 docker container top myWebServer        -> shows processes inside my container
 docker container inspect myWebServer    -> shows docker config file (json) for this container
@@ -67,7 +67,7 @@ docker container stats                  -> shows overall performance of all my c
 docker container stats myWenServer      -> shows performance details of my container
 
 ```
-###7. starting CLI inside of container
+### 7. starting CLI inside of container
 
     2 options:
 
