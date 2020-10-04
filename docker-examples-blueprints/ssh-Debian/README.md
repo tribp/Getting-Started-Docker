@@ -47,7 +47,7 @@ docker-compose up -d
 
 ### 5.1 NMAP
 
-<img src="./img/nmap.png" width="400px">
+<img src="./img/nmap.png" width="500px">
 
 ### 5.2 SSH
 
@@ -59,12 +59,12 @@ ssh -p 5222 root@192.168.2.152
 
 - install extension "Remote-SSH"
 
-<img src="./img/remote-ssh-extension.png" width="400px">
+<img src="./img/remote-ssh-extension.png" width="600px">
 
 - goto "remote explorer -> SSH targets
 - add (+) or click on the "wheel" and add your host manually (my prefered way)
 
-<img src="./img/ssh-targets-config.png" width="400px">
+<img src="./img/ssh-target-config.png" width="400px">
 
 - click on the host to connect + enter your password.
 
