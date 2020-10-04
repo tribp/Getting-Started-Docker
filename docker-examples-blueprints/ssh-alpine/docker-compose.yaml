@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+    dsmr_aws:
+        container_name: testDSMR
+        image: my_image
+        tty: true
+        stdin_open: true
+        volumes:
+            - /work:/work
+        ports:
+            - 5022:5022
