@@ -64,7 +64,7 @@ ssh -p 5222 root@192.168.2.152
 - goto "remote explorer -> SSH targets
 - add (+) or click on the "wheel" and add your host manually (my prefered way)
 
-<img src="./img/ssh-target-config.png" width="400px">
+<img src="./img/ssh-target-config.png" width="600px">
 
 - click on the host to connect + enter your password.
 
