@@ -2,7 +2,7 @@ version: '2'
 services:
 
     dsmr_aws:
-        container_name: testDSMR
+        container_name: testBusterDSMR
         image: my_buster_image
         tty: true
         stdin_open: true

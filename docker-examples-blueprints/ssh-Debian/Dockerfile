@@ -22,9 +22,6 @@ RUN mkdir /root/.ssh; chown root. /root/.ssh; chmod 700 /root/.ssh
 RUN ssh-keygen -A
 
 ADD supervisord.conf /etc/supervisor/supervisord.conf
-#ADD .ssh/id_rsa.pub /root/.ssh/authorized_keys
 
-#CMD python -m debugpy --listen localhost:5678 --wait-for-client test.py
-#CMD ["/bin/bash"]
 CMD ["/usr/bin/supervisord"]
 

@@ -17,6 +17,5 @@ RUN ssh-keygen -A \
     && sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication no/' /etc/ssh/sshd_config \
     && sed -i 's/#Port 22/Port 5022/g' /etc/ssh/sshd_config
 
-#CMD python -m debugpy --listen localhost:5678 --wait-for-client test.py
 
 CMD ["/usr/sbin/sshd","-D"]
