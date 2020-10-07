@@ -31,7 +31,7 @@ A second way to achieve it is by 'wrapping' the remote program with a specific d
 - we wrap our remote python program with 'debugpy'
     - see: **python -m debugpy --listen 0.0.0.0:5678 --wait-for-client -m test.py**
     - typically this will be a python program running in a remote container on a remote machine. 
-    - 0.0.0.0:5678 -> this instrcuts debugpy to the localhost, the remote container, to listen on port 5678
+    - 0.0.0.0:5678 -> this instructs debugpy to the localhost (the remote container) to listen on port 5678
 - we tell it to "wait" until our IDE (on our PC/Mac) connects to it and gets (debug) instructions: start / step / stop etc
 
 - install the VScode extension. 
@@ -46,4 +46,4 @@ A second way to achieve it is by 'wrapping' the remote program with a specific d
 
 <img src='./img/launch_json.png' width="750px">
 
-- start debug
+- start debug: **Python Remote Attach (your dir with the .vscode folder)**
