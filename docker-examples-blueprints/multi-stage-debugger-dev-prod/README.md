@@ -36,7 +36,7 @@ A second way to achieve it is by 'wrapping' the remote program with a specific d
 
 - install the VScode extension. 
 
-<img src='./img/python-debugger.png' width="600px">
+<img src='./img/python_debugger.png' width="600px">
 
 - create a 'lauch.json' in the '.vscode' directory with:
     - program language: python, node,..
@@ -44,6 +44,6 @@ A second way to achieve it is by 'wrapping' the remote program with a specific d
     - IP-port of remote host to connect to (eg: 5678)
     - Pathmappings of host (Mac) to remote (container)
 
-<img src='./img/launch_json.png' width="600px">
+<img src='./img/launch_json.png' width="750px">
 
 - start debug
