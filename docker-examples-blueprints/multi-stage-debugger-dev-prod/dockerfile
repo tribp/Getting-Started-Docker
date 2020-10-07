@@ -1,0 +1,24 @@
+FROM python:3.8.6-slim-buster as base
+
+WORKDIR /work/
+COPY test.py /work/
+
+############# Development################
+
+FROM base as development
+
+RUN pip install debugpy
+
+ENTRYPOINT ["python","-m","debugpy","--listen","0.0.0.0:5678","--wait-for-client","-m","test.py"]
+
+#CMD /bin/sh
+
+
+############# Production #################
+
+FROM base as production
+
+ENTRYPOINT ["python","-m"]
+
+CMD test.py
+

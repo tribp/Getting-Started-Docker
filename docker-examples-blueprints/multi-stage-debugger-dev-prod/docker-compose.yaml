@@ -1,0 +1,13 @@
+
+version: '3'
+services:
+    dsmr_aws:
+        container_name: testDebugDSMR
+        image: my_multistage_image
+        build:
+            context: . 
+            target: development
+        volumes:
+            - /work:/work
+        ports:
+            - 5678:5678
