@@ -47,3 +47,5 @@ A second way to achieve it is by 'wrapping' the remote program with a specific d
 <img src='./img/launch_json.png' width="750px">
 
 - start debug: **Python Remote Attach (your dir with the .vscode folder)**
+
+<img src='./img/python_remote_attach.png' width="300px">
