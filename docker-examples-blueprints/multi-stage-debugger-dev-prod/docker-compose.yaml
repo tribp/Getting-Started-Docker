@@ -5,7 +5,7 @@ services:
         container_name: testDebugDSMR
         image: my_multistage_image
         build:
-            context: . 
+            context: /work/. 
             target: development
         volumes:
             - /work:/work

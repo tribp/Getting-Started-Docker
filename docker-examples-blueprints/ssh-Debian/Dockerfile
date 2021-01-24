@@ -1,5 +1,5 @@
 
-FROM python:3.9-rc-slim-buster
+FROM python:3.9-slim-buster
 
 RUN mkdir /work/
 WORKDIR /work/

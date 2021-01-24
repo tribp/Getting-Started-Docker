@@ -9,6 +9,7 @@
     4. Docker Hub
     5. Dockerfile
     6. Docker-compose
+    7. Docker Hub
 
 Architecture: docker vs VM  
 <img src="images/dockerVsVM.png" width="600px" >
@@ -475,6 +476,37 @@ docker rmi $(docker images -q) -> deletes all images
 ```
 
 
-## 7 Docker-compose
+## 6 Docker-compose
 
 Docker-compose uses 'yaml' files for describing how to configure and **deploy** multi-**container** applications
+
+## 7 Docker Hub
+
+Docker Hub, (hub.docker.com)[hub.docker.com], is a public repository for docker images, offered by docker. 
+
+This can be used in 2 ways:
+    - to automatically retrieve popular docker images
+    - to create your personal or special images and mage them publically available. 
+
+### 7.1 To retrieve popular docker images.
+
+In order to use this functionality, you do not need to create a login/password. When you specify a image:
+    - manually with "docker run ..." (eg: docker container run --name web_server -d -p 8080:80 nginx)
+    - in a dockerfile: 'FROM nginx:latest .....'
+    - in a docker-compose.yaml file:  'image: openhab/openhab:2.5.5 ....'
+docker will first look locally to find the image, but if not, it will automaticaly start looking into the public dockerhub repository in order to find it and download it.
+
+### 7.2 To create your personal images
+
+**Step 1:** Create a login and password on hub.docker.com
+**Step 2:** Create your own image from a dockerfile
+    - "docker build -t my_user_name/my_image:version ."
+**Step 3:** Upload your image to the dockerhub repository
+
+example
+```
+docker build -t openmeter/dsmr_fluvius:0.9 . 
+docker login --username=openmeter 
+docker push openmeter/dsmr_fluvius:0.9
+```
+
