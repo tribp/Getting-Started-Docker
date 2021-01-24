@@ -67,6 +67,7 @@ ps -au | grep python
 
 # list all the threads of this PID
 ps -T -p <PID>
+top -H -p <PID>
 ```
 
 ### 5.1 NMAP
