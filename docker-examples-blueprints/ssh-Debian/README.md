@@ -105,6 +105,14 @@ ssh-keygen -R 192.168.2.152
 ssh-keygen -R [192.168.2.152]:5222
 ```
 
+**Or you can manually delete entry in the known host file to delete relationship with key**
+
+```
+sudo nano /Users/tribp/.ssh/known_hosts
+# look at the "host:portnumber" and delete that line
+# reconnect with ssh -> this will create the correct entry in this file
+```
+
 # 7. Python application
 
 In your dir make a file 'requirements.txt' containing all python libraries to install. If you don't you to manually or by script perform "pip3 install LIBRARY_TO_USE"
